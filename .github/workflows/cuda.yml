@@ -1,13 +1,6 @@
 name: CUDA Version
 
 on:
-  push:
-    branches:
-    - master
-  pull_request:
-    branches:
-    - master
-  # Run manually by clicking a button in the UI
   workflow_dispatch:
     inputs:
       restart_docker:
@@ -17,6 +10,7 @@ on:
         default: false
 
 # automatically cancel in-progress builds if another commit is pushed
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

@@ -3,14 +3,8 @@
 name: Static Analysis
 
 on:
-  push:
-    branches:
-    - master
-  pull_request:
-    branches:
-    - master
+  workflow_dispatch:
 
-# automatically cancel in-progress builds if another commit is pushed
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true

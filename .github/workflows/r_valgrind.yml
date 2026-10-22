@@ -1,8 +1,7 @@
 name: R valgrind tests
 
 on:
-  repository_dispatch:
-    types: [gha_run_r_valgrind]
+  workflow_dispatch:
 
 jobs:
   test-r-valgrind:
